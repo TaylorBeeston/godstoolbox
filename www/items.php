@@ -30,5 +30,5 @@
     <?php smallWindow($items[rand(0, count($items))]); ?>
   </div>
 </div> 
-<script src="scripts/add-to-cart.js"></script>
+<script type="text/javascript" src="scripts/add-to-cart.js"></script>
 <?php include 'partials/footer.php'; ?>

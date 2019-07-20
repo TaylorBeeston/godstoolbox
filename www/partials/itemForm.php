@@ -21,4 +21,4 @@
   <span>This form currently does nothing and will redirect you to the home page</span>
   <input type="submit" />
 </form>
-<script src="scripts/image-preview.js"></script>
+<script type="text/javascript" src="scripts/image-preview.js"></script>
