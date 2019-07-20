@@ -11,7 +11,7 @@
   <div class="main">
     <h2>Recently Added Items</h2>
     <?php for ($i = 0; $i < 3; $i++) { windowShopper($items[$i]); } ?>
-    <h2><a href="browse.php"><em><u>See the rest here!</u></em></a></h2>
+    <h2><a href="browse.php"><em class="underlined">See the rest here!</em></a></h2>
   </div>
   <div class="side">
     <ul>

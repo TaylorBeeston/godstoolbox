@@ -43,6 +43,15 @@ a {
   color: <?php echo $dark_text; ?>;
 }
 
+.underlined {
+  text-decoration: underline;
+}
+
+/* link fix */
+.hoverpointer:hover {
+  cursor: pointer;
+}
+
 /* header styles */
 
 #header {
@@ -255,12 +264,6 @@ a {
   margin: 25px auto;
   padding: 20px;
   box-shadow: 0 0 10px;
-}
-
-.window-shopping > a {
-  margin: auto;
-  text-decoration: none;
-  color: <?php echo $dark_text; ?>;
 }
 
 .window-shopping img {
