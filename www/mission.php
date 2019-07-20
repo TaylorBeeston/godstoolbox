@@ -6,7 +6,7 @@
 </div>
 <div class="two-columns">
   <div class="main">
-    <h1>Our mission at God's Toolbox is to serve God with empathy, understanding, and care</h2>
+    <h1>Our mission at God's Toolbox is to serve God with empathy, understanding, and care</h1>
     <p>We will achieve this mission by providing not just missionaries, but everyone around the
        world with the tools they need to succeed and bear fruit for the Lord.</p>
     <p>We will provide service and products of outstanding quality to our customers, because

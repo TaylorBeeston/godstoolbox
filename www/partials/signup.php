@@ -3,11 +3,11 @@
   <input type="hidden" name="form-sent" value="true" />
   <fieldset>
     <label for="username">Username</label>
-    <input type="text" name="username" value="<?php print $username ?>" 
+    <input id="username" type="text" name="username" value="<?php print $username ?>" 
      required="required" />
 
     <label for="password">Password</label>
-    <input type="password" name="password" required="required" />
+    <input id="password" type="password" name="password" required="required" />
 
     <input type="submit" value="Sign up!" disabled="disabled" />
   </fieldset>

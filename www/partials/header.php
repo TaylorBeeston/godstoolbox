@@ -17,9 +17,7 @@
     <a href="index.php">
       <img src="images/logo_transparent.png" alt="logo" />
     </a>
-    <a href="index.php">
-      <h1>God's Toolbox</h1>
-    </a>
+    <a id="logotext" href="index.php">God's Toolbox</a>
   </div>
   <a id="cart" href="cart.php">Cart (<?php print count($_SESSION['cart']); ?>)</a>
   <?php include 'menu.php'; ?>

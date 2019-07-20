@@ -66,10 +66,11 @@ a {
   text-decoration: none;
 }
 
-#logo h1 {
+#logotext {
   color: <?php echo $light_text; ?>;
   font-size: 1.5em;
   text-shadow: 0 0 50px, 0 0 25px;
+  margin-top: 20px;
 }
 
 #cart {

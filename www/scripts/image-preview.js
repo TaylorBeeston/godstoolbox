@@ -1,5 +1,5 @@
 previewTag = document.querySelector('#preview');
-uploader   = document.querySelector('#image-upload');
+uploader   = document.querySelector('#image');
 
 uploader.onchange = function(e) {
   var reader = new FileReader();

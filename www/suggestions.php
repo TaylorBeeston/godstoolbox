@@ -12,13 +12,13 @@
     <form action="mailto:someone@example.com" method="post" enctype="text/plain">
        <fieldset>
          <label for="name">Name</label>
-         <input type="text" name="name" />
+         <input id="name" type="text" name="name" />
 
          <label for="email">Email</label>
-         <input type="text" name="email" />
+         <input id="email" type="text" name="email" />
 
          <label for="product">Product</label>
-         <input type="text" name="product" />
+         <input id="product" type="text" name="product" />
 
          <input type="submit" disabled="disabled" value="Send" />
        </fieldset>

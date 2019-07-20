@@ -12,27 +12,27 @@
        <fieldset>
          <legend>Shipping/Billing Information</legend>
          <label for="name">Name</label>
-         <input type="text" name="name" />
+         <input id="name" type="text" name="name" />
 
          <label for="address1">Address</label>
-         <input type="text" name="address1" />
+         <input id="address1" type="text" name="address1" />
          <input type="text" name="address2" />
 
          <label for="zip">Zip Code</label>
-         <input type="text" name="zip" />
+         <input id="zip" type="text" name="zip" />
 
          <label for="state">State</label>
-         <input type="text" name="state" maxlength="2" />
+         <input id="state" type="text" name="state" maxlength="2" />
        </fieldset>
        <fieldset>
          <legend>Payment Information</legend>
          
          <label for="cardnumber">Card Number</label>
-         <input type="text" name="cardnumber" />
+         <input id="cardnumber" type="text" name="cardnumber" />
          
          <label for="expirationmonth">Expiration Date</label>
          <div>
-           <select name="expirationmonth">
+           <select id="expirationmonth" name="expirationmonth">
              <option value="january">January</option>
              <option value="february">February</option>
              <option value="march">March</option>
@@ -63,7 +63,7 @@
          </div>
 
        <label for="securitycode">Secuity Code</label>
-       <input type="text" name="securitycode" />
+       <input id="securitycode" type="text" name="securitycode" />
        </fieldset>
        <input type="submit" disabled="disabled" value="Buy" />
     </form>

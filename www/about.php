@@ -24,9 +24,9 @@
     <p>Follow us on Twitter and Instagram, and Like us on Facebook!
        Also look for a <a href="images/flier.png"><em>flier</em></a> at your local church!</p>
     <div class="social-media-icons">
-      <a href="facebook.com"><img src="images/socialMediaIcons/facebook.png" alt=""></a>
-      <a href="twitter.com"><img src="images/socialMediaIcons/twitter.png" alt=""></a>
-      <a href="instagram.com"><img src="images/socialMediaIcons/instagram.png" alt=""></a>
+      <a href="facebook.com"><img src="images/socialMediaIcons/facebook.png" alt="" /></a>
+      <a href="twitter.com"><img src="images/socialMediaIcons/twitter.png" alt="" /></a>
+      <a href="instagram.com"><img src="images/socialMediaIcons/instagram.png" alt="" /></a>
     </div>
   </div>
   <div class="side">
