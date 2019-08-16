@@ -7,7 +7,6 @@ unset($_SESSION['username']);
 // tables must be dropped in this order to resolve foreign key issues
 mysqli_query($conn, 'DROP TABLE IF EXISTS CartItems;');
 mysqli_query($conn, 'DROP TABLE IF EXISTS Carts;');
-mysqli_query($conn, 'DROP TABLE IF EXISTS Suggestions;');
 mysqli_query($conn, 'DROP TABLE IF EXISTS Users;');
 mysqli_query($conn, 'DROP TABLE IF EXISTS Products;');
 mysqli_query($conn, 'DROP TABLE IF EXISTS Facts;');
@@ -83,13 +82,6 @@ $values = [['Taylor', 'Beeston', 'taylorbeeston', '123@aol.com',
           ['Andrea', 'Beeston', 'andibeeston', '321@aol.com',
            hash('sha256', 'password'), 1]];
 insert_into_table($conn, 'Users', $schema, $values);
-
-// create Suggestions
-$fields = ['Created' => 'TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
-           'Product' => 'TEXT NOT NULL',
-           'UserID' => 'SMALLINT UNSIGNED NOT NULL'];
-$fkeys = ['UserID' => ['table' => 'Users', 'field' => 'ID']];
-create_table($conn, 'Suggestions', $fields, $fkeys);
 
 // create Carts
 $fields = ['UserID' => 'SMALLINT UNSIGNED NOT NULL'];
