@@ -66,6 +66,16 @@ function get_users_with_access_levels($conn) {
   return mysqli_fetch_all($result);
 }
 
+function get_access_level_id($conn, $level) {
+  $level = sanitize($conn, $level);
+
+  $query = "SELECT ID FROM AccessLevels WHERE AccessLevel=$level";
+  $result = mysqli_query($conn, $query);
+  $id     = mysqli_fetch_row($result);
+
+  return $id[0];
+}
+
 function get_field_from_id($conn, $table, $id, $field) {
   $table = sanitize($conn, $table);
   $field = sanitize($conn, $field);

@@ -16,21 +16,26 @@ $fields = ['FirstName' => 'VARCHAR(25) NOT NULL',
 $fkeys = ['AccessLevel' => ['table' => 'AccessLevels',
                             'field' => 'ID']];
 create_table($conn, 'Users', $fields, $fkeys);
-echo mysqli_error($conn);
+
+$c = get_access_level_id($conn, 'Customer');
+$p = get_access_level_id($conn, 'Publisher');
+$a = get_access_level_id($conn, 'Admin');
 
 // seed Users
 $schema = 'FirstName, LastName, UserName, Email, Password, AccessLevel';
 $values = [['Taylor', 'Beeston', 'taylorbeeston', '123@aol.com', 
-           hash('sha256', 'abc123'), 3],
+           hash('sha256', 'abc123'), $a],
           ['Admin', 'Admin', 'admin', 'admin@admin.com', 
-           hash('sha256', 'admin'), 3],
+           hash('sha256', 'admin'), $a],
           ['Publisher', 'Publisher', 'publisher', 'pub@pub.com',
-           hash('sha256', 'publisher'), 2],
+           hash('sha256', 'publisher'), $p],
           ['Cusomer', 'Customer', 'customer', 'cust@cust.com',
-           hash('sha256', 'customer'), 1],
+           hash('sha256', 'customer'), $c],
           ['Andrea', 'Beeston', 'andibeeston', '321@aol.com',
-           hash('sha256', 'password'), 1]];
+           hash('sha256', 'password'), $c]];
 insert_into_table($conn, 'Users', $schema, $values);
+
+echo mysqli_error($conn);
 
 // create Carts
 $fields = ['UserID' => 'SMALLINT UNSIGNED NOT NULL'];
