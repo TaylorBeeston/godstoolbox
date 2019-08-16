@@ -1,5 +1,9 @@
-<?php include '../helpers/multihelper.php';
-print_r(get_all($conn, 'Users'));
+<?php include '../helpers/multihelper.php'; ?>
+<h1>Users</h1>
+<pre><?php print_r(get_all($conn, 'Users')); ?></pre>
+<h1>Access Levels</h1>
+<pre><?php print_r(get_all($conn, 'AccessLevels')); ?></pre>
+<?php
 
 mysqli_query($conn, 'DROP TABLE IF EXISTS CartItems;');
 mysqli_query($conn, 'DROP TABLE IF EXISTS Carts;');
@@ -20,6 +24,8 @@ create_table($conn, 'Users', $fields, $fkeys);
 $c = get_access_level_id($conn, 'Customer');
 $p = get_access_level_id($conn, 'Publisher');
 $a = get_access_level_id($conn, 'Admin');
+
+echo "Customer: $c, Publisher: $p, Admin: $a";
 
 // seed Users
 $schema = 'FirstName, LastName, UserName, Email, Password, AccessLevel';

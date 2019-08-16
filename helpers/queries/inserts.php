@@ -9,6 +9,8 @@ function insert_into_table($conn, $table, $schema, $values) {
   $sql = "INSERT INTO $table ($schema) VALUES " 
     . generate_insert_string($conn, $values) . ";";
 
+  echo "<pre>$sql</pre>";
+
   mysqli_query($conn, $sql);
 }
 
