@@ -1,10 +1,12 @@
-<?php
-$servername = 'localhost';
-$username   = 'taylor';
-$password   = 'abc123';
+<?php // database.php - sets up the database connection
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$servername = $url['host'];
+$username   = $url['user'];
+$password   = $url['pass'];
+$db         = preg_replace('/\?reconnect=true/', '', substr($url['path'], 1));
 
 // create connection
-$conn = mysqli_connect($servername, $username, $password, 'godstoolbox');
+$conn = mysqli_connect($servername, $username, $password, $db);
 
 // check connection
 if (!$conn)
