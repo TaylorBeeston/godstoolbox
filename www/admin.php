@@ -1,18 +1,15 @@
-<?php session_start();
-  // redirects unless user is admin
-  ($_SESSION['username'] == 'admin') || header('Location: index.php');
-
+<?php
   $title = 'Administration';
+  include '../helpers/multihelper.php'; 
+  include '../helpers/admin.php';
+  include '../partials/header.php'; ?>
 
-  include 'helpers/includes.php';
-  include 'data/items.php';
-  include 'partials/header.php'; ?>
 <div class="big-red-box">
   <h1 class="big-text">Admin</h1>  
-  <a href="newitem.php">Click here to add an item</a>
-  <h2>Click an item to modify its information or delete!</h2>
-  <div class="browse">
-    <?php forEach($items as $id => $item) { itemAdmin($id, $item); } ?>
+  <h2>Hello, what would you like to edit?</h2>
+  <div>
+    <a href="adminUsers.php" class="admin-button">Users</a>
+    <a href="adminProducts.php" class="admin-button">Products</a>
   </div>
 </div> 
-<?php include 'partials/footer.php'; ?>
+<?php include '../partials/footer.php'; ?>

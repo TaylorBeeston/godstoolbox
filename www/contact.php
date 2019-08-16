@@ -1,6 +1,7 @@
 <?php 
+  include '../helpers/multihelper.php';
   $title = 'Contact Us';
-  include 'partials/header.php'; ?>
+  include '../partials/header.php'; ?>
 <div class="big-red-box">
   <h1>Contact Us</h1>
   <p>Use the form below to get ahold of us!</p>
@@ -38,4 +39,4 @@
     </ul>
   </div>
 </div> 
-<?php include 'partials/footer.php'; ?>
+<?php include '../partials/footer.php'; ?>

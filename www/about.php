@@ -1,6 +1,7 @@
 <?php 
   $title = 'About Us';
-  include 'partials/header.php'; ?>
+  include '../helpers/multihelper.php';
+  include '../partials/header.php'; ?>
 <div class="big-red-box">
   <h1><em>About Us</em></h1>
 </div>
@@ -43,4 +44,4 @@
     </ul>
   </div>
 </div> 
-<?php include 'partials/footer.php'; ?>
+<?php include '../partials/footer.php'; ?>

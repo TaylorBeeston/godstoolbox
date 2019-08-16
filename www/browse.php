@@ -1,15 +1,15 @@
 <?php 
   $title = 'Browse All';
-  include 'helpers/includes.php';
-  include 'data/items.php';
-  include 'partials/header.php'; ?>
+  include '../helpers/multihelper.php';
+  include '../partials/header.php'; ?>
 <div class="big-red-box">
   <h1 class="big-text">Browse All</h1>
 </div>
 <div class="two-columns">
   <div class="main">
     <div class="browse">
-      <?php forEach($items as $item) { itemWindow($item); } ?>
+      <?php forEach(get_all($conn, 'Products') as $product) { 
+              productWindow($product); } ?>
     </div>
   </div>
   <div class="side">
@@ -27,4 +27,4 @@
     </ul>
   </div>
 </div> 
-<?php include 'partials/footer.php'; ?>
+<?php include '../partials/footer.php'; ?>

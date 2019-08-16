@@ -1,20 +1,20 @@
 <?php 
+  include '../helpers/multihelper.php';
+  $pub   = is_pub($conn, $_SESSION['username']) || 
+           is_admin($conn, $_SESSION['username']);
   $title = 'Facts';
-  include 'partials/header.php'; ?>
+  include '../partials/header.php'; ?>
 <div class="big-red-box">
   <h1><em>Facts</em></h1>
 </div>
 <div class="two-columns">
   <div class="main">
+    <?php if ($pub) { ?>
+      <a href="factForm.php" class="new-fact" >Click here to add a new Fact!</a>
+    <?php } ?>
     <ul class="big-list">
-      <li>God's Toolbox started as a school project by Founder 
-          Taylor Beeston back in 2019</li>
-      <li>We have now fulfilled over 250,000 orders!</li>
-      <li>Some of the places we have  delivered tools to include Madagascar, 
-          Tonga, and even Antarctica!</li>
-      <li>Over 75% of our inventory has come as the result of suggestions from
-          shoppers!</li>
-      <li>Taylor has really enjoyed making this website!</li>
+      <?php foreach (get_all($conn, 'Facts', 'ID, Fact') as $fact) { 
+              fact($fact, $pub); } ?>
     </ul>
   </div>
   <div class="side">
@@ -32,4 +32,4 @@
     </ul>
   </div>
 </div> 
-<?php include 'partials/footer.php'; ?>
+<?php include '../partials/footer.php'; ?>

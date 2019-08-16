@@ -464,6 +464,11 @@ a {
   background-color: <?php echo $color2; ?>;
 }
 
+#qty {
+  padding: 0 10px;
+  margin-top: -15px;
+}
+
 /* list styles */
 
 .big-list {
@@ -512,7 +517,7 @@ select {
   font-size: 1.0em;
   border-radius: 10px;
   padding: 5px;
-  margin: 5px;
+  margin: 5px auto;
 }
 
 input[type=submit] {
@@ -534,6 +539,56 @@ fieldset {
   background-color: <?php echo $light_text; ?>;
   box-shadow: 0 0 10px;
   margin: 25px auto;
+  text-align: center;
+}
+
+.delete-button {
+  display: block;
+  width: 50%;
+  text-decoration: underline;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: <?php echo $color2; ?>;
+  color: <?php echo $light_text; ?>;
+  box-shadow: 0 0 30px;
+  margin: 25px auto;
+  text-align: center;
+}
+
+.admin-button {
+  display: block;
+  width: 50%;
+  text-decoration: underline;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: <?php echo $light_text; ?>;
+  box-shadow: 0 0 10px;
+  margin: 25px auto;
+  text-align: center;
+}
+
+/* fact styles */
+
+.new-fact {
+  display: block;
+  width: 50%;
+  text-decoration: underline;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: <?php echo $light_text; ?>;
+  box-shadow: 0 0 10px;
+  margin: 25px auto;
+  text-align: center;
+}
+
+.edit-button {
+  float: left;
+  text-decoration: underline;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  background-color: <?php echo $light_text; ?>;
+  box-shadow: 0 0 10px;
   text-align: center;
 }
 

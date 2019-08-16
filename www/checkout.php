@@ -1,6 +1,7 @@
 <?php 
+  include '../helpers/multihelper.php';
   $title = 'Checkout';
-  include 'partials/header.php'; ?>
+  include '../partials/header.php'; ?>
 <div class="big-red-box">
   <h1>Checkout</h1>
   <p>Please enter your information to purchase your products!</p>
@@ -74,4 +75,4 @@
     <?php smallWindow($items[rand(0, count($items))]); ?>
   </div>
 </div> 
-<?php include 'partials/footer.php'; ?>
+<?php include '../partials/footer.php'; ?>

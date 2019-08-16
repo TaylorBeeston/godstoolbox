@@ -1,6 +1,7 @@
 <?php 
+  include '../helpers/multihelper.php';
   $title = 'Suggestions';
-  include 'partials/header.php'; ?>
+  include '../partials/header.php'; ?>
 <div class="big-red-box">
   <h1>Product Suggestion</h1>
   <p>Use the form below to suggest a new product!</p>
@@ -38,4 +39,4 @@
     </ul>
   </div>
 </div> 
-<?php include 'partials/footer.php'; ?>
+<?php include '../partials/footer.php'; ?>

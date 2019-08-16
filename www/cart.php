@@ -1,24 +1,31 @@
 <?php 
-  session_start();
-  include 'helpers/cart.php';
-  include 'data/items.php';
+  include '../helpers/multihelper.php';
+  include '../helpers/cart.php';
+
+  $cartID = get_shopping_cart($conn, $_SESSION['username']);
 
   // add items to cart
-  if (isset($_POST['itemid'])) {
-    $id       = $_POST['itemid'];
-    $qty      = $_POST['qty'];
-    $item     = $items[$id];
-    $safeName = htmlspecialchars($item['name']);
-    $title    = "Successfully added $safeName to cart!";
-    addToCart($id, $qty);
+  if (isset($_POST['add'])) {
+    $productID = $_POST['productid'];
+    $qty       = $_POST['qty'];
+    $name      = get_field_from_id($conn, 'Products', $productID, 'Name');
+    $title     = "Successfully added $name to cart!";
+    add_to_cart($conn, $cartID, $productID, $qty);
   } 
 
   // remove items from cart
-  if (isset($_POST['removeitem'])) {
-    removeFromCart($_POST['removeitem']);
-  }
+  if (isset($_POST['remove']))
+    remove_from_cart($conn, $_POST['remove']);
 
-  include 'partials/header.php'; 
+  // update quantity
+  if (isset($_POST['update']))
+    update_item_qty($conn, $_POST['update'], $_POST['qty']);
+
+  // empty cart
+  if (isset($_GET['empty']))
+    empty_cart($conn, $cartID);
+
+  include '../partials/header.php'; 
 ?>
 <div class="big-red-box">
   <h1>Cart</h1>
@@ -27,23 +34,25 @@
   <div class="main">
     <?php 
       // display banner on successful add
-      if (isset($_POST['itemid'])) {
+      if (isset($_POST['add'])) {
       print "<div class=\"success\">
           <h3 class=\"big-text\">$title</h3>
         </div>";
     }
 
-    if (!empty($_SESSION['cart'])) { // items in cart
+    $cart = get_cart($conn, $cartID);
+
+    if (!empty($cart)) { // items in cart
       print "<div class=\"cart\">";
 
-      foreach($_SESSION['cart'] as $cid => $quantity) {
-        cartItem($cid, $items[$cid], $quantity); }
+      foreach($cart as $cart_item) {
+        cartItem($conn, $cart_item); }
 
-      printTotal();
+      print_total($conn, $cart);
 
       print "</div>
         <div class=\"cart-buttons\">
-        <a href=\"controllers/emptycart.php\">Empty Cart</a>
+        <a href=\"cart.php?empty=true\">Empty Cart</a>
         <a href=\"checkout.php\">Checkout</a>
       </div>"; 
     } else { // cart is empty
@@ -52,4 +61,4 @@
     
   </div>
 </div>
-<?php include 'partials/footer.php'; ?>
+<?php include '../partials/footer.php'; ?>
