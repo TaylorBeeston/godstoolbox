@@ -10,7 +10,7 @@
 <?php // allow database to be built if there is no Users table, or if current
       // User is an admin
   if (!table_exists($conn, 'Users') || is_admin($conn, $_SESSION['username'])) { ?>
-    <a href="../helpers/create_database.php">Click here to create/reset the database!</a>
+    <a href="create_database.php">Click here to create/reset the database!</a>
   <?php } ?>
 
 </div>

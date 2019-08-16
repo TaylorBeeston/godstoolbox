@@ -1,7 +1,9 @@
 <?php
 require '../helpers/multihelper.php';
+if (table_exists($conn, 'Users') && table_exists($conn, 'AccessLevels'))
+  require '../helpers/admin.php';
 
-header("refresh:10; url=../www/index.php");
+header("refresh:10; url=index.php");
 unset($_SESSION['username']);
 
 // tables must be dropped in this order to resolve foreign key issues
