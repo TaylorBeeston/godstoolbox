@@ -58,6 +58,7 @@ function get_user_id($conn, $username) {
   return $id[0];
 }
 
+// returns all users with their access levels in text form
 function get_users_with_access_levels($conn) {
   $query = "SELECT Users.ID, FirstName, LastName, UserName, Email, AccessLevels.AccessLevel
             FROM Users JOIN AccessLevels ON Users.AccessLevel = AccessLevels.ID;";
@@ -68,14 +69,11 @@ function get_users_with_access_levels($conn) {
 
 // returns the ID of a given Access Level
 function get_access_level_id($conn, $level) {
-  // $level = sanitize($conn, $level);
+  $level = sanitize($conn, $level);
 
-  $query = "SELECT ID FROM AccessLevels WHERE AccessLevel = $level";
+  $query = "SELECT ID FROM AccessLevels WHERE AccessLevel = '$level'";
   $result = mysqli_query($conn, $query);
   $id     = mysqli_fetch_row($result);
-
-  echo $query;
-  echo mysqli_error;
 
   return $id[0];
 }

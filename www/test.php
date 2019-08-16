@@ -25,7 +25,7 @@ $c = get_access_level_id($conn, 'Customer');
 $p = get_access_level_id($conn, 'Publisher');
 $a = get_access_level_id($conn, 'Admin');
 
-echo "Customer: $c, Publisher: $p, Admin: $a";
+echo "<h1>Customer: $c, Publisher: $p, Admin: $a</h1>";
 
 // seed Users
 $schema = 'FirstName, LastName, UserName, Email, Password, AccessLevel';
@@ -40,8 +40,6 @@ $values = [['Taylor', 'Beeston', 'taylorbeeston', '123@aol.com',
           ['Andrea', 'Beeston', 'andibeeston', '321@aol.com',
            hash('sha256', 'password'), $c]];
 insert_into_table($conn, 'Users', $schema, $values);
-
-echo mysqli_error($conn);
 
 // create Carts
 $fields = ['UserID' => 'SMALLINT UNSIGNED NOT NULL'];
