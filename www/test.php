@@ -23,7 +23,7 @@ create_table($conn, 'Users', $fields, $fkeys);
 
 $c = get_access_level_id($conn, 'Customer');
 $p = get_access_level_id($conn, 'Publisher');
-$a = get_access_level_id($conn, 'Admin');
+$a = get_access_level_id($conn, 'Administrator');
 
 echo "<h1>Customer: $c, Publisher: $p, Admin: $a</h1>";
 
